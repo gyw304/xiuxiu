@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="GBK">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=1.0,maximum-scale=1.0">
+	<title>Phaser</title>
+    <style>
+        *{margin:0;padding:0}
+        html, body
+        {
+            -webkit-text-size-adjust:none;
+            height:100%;
+            overflow: hidden;
+        }
+        #cover{
+            position: absolute;
+            left:0;
+            top:0;
+            right:0;
+            bottom:0;
+            background-color: rgba(0,0,0,.9);
+            display: none;
+        }
+        #login{
+            width:13.575rem;
+            height:10.75rem;
+            background-image: url('assets/login.png');
+            background-size: 13.575rem 10.75rem;
+            position: absolute;
+            left:50%;
+            top:50%;
+            margin-left:-6.7875rem;
+            margin-top:-5.375rem;
+        }
+        #login input.ipt{
+            width:7.8rem;
+            height:1.3rem;
+            position: absolute;
+            border: none;
+            background-color: transparent;
+            color:#fff;
+            font-size:.7rem;
+            line-height: 1.3rem;
+        }
+        #name{
+            left:4rem;
+            top:2.75rem
+        }
+        #phone{
+            left:4rem;
+            top:5.25rem
+        }
+        button{
+            width:5.775rem;
+            height:1.55rem;
+            background-image: url('assets/sub_btn.png');
+            background-size: 5.775rem 1.55rem;
+            position: absolute;
+            left:4rem;
+            top:7.3rem;
+            border: none;
+            background-color: transparent;
+        }
+        #closeWin{
+            width:1.125rem;
+            height:1.1rem;
+            background-image: url('assets/close-login.png');
+            background-size: 1.125rem 1.1rem;
+            position: absolute;
+            right:.7rem;
+            top:.7rem;
+        }
+
+    </style>
+    <script src="phaser.2.4.4.min.js"></script>
+    <script src="phaser-input.min.js"></script>
+    <script src="Boot.js"></script>
+    <script src="Preloader.js?1"></script>
+    <script src="UI.js"></script>
+    <script src="Game.js"></script>
+    <script src="Exchange.js"></script>
+    <script src="Myspoil.js"></script>
+</head>
+<body style="background-color: #000">
+
+    <div id="cover">
+        <div id="login">
+            <div id="closeWin"></div>
+            <div class="frm"><input type="text" id="name" class="ipt"/></div>
+            <div class="frm"><input type="text" id="phone" class="ipt"/></div>
+            <button id="subBtn"></button>
+        </div>
+    </div>
+
+<script>
+
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    docEl.style.fontSize = 20 * (clientWidth / 375) + 'px';
+                };
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+
+    document.getElementById('closeWin').addEventListener('touchend',function(){
+        document.getElementById('cover').style.display = 'none';
+    },false);
+
+    document.getElementById('subBtn').addEventListener('touchend',function(){
+        document.getElementById('cover').style.display = 'none';
+        user.isLogin = true;
+    },false)
+
+
+
+
+
+    var user = {
+        score : 0,
+        isLogin : false
+    };
+
+    var config = {
+        probability : { //概率设置(%)
+            sun : 20,
+            AD :3
+        },
+        AD : [ //广告设置
+            {
+                adimg : 'adimg.jpg?1',
+                adprice:'20000元/平米',
+                adpolicy:'1万享5万',
+                adphone : '400-8181-365 转 115348'
+            },
+            {
+                adimg : 'http://pic7.nipic.com/20100613/2572038_011411991532_2.jpg',
+                adprice:'50000元/平米',
+                adpolicy:'1万享5万',
+                adphone : '400-8181-365 转 115348'
+            }
+        ],
+        spoil : [ //奖品设置
+            {//9
+                spoilname : '礼盒装鸡蛋10盒',
+                offer : '-该奖品由正源尚峰尚水提供-',
+                address:'云龙山路66号省建大厦B座6楼'
+            },
+            {//19
+                spoilname : '玛莎拉蒂总裁一辆',
+                offer : '-该奖品由正源尚峰尚水提供-',
+                address:'云龙山路66号省建大厦B座6楼'
+            },
+            {//29
+                spoilname : '大别墅10套',
+                offer : '-该奖品由正源尚峰尚水提供-',
+                address:'喜马拉雅山'
+            }
+        ],
+        myspoil : [ //我的奖品
+            {
+                spoilname : '玛莎拉蒂总裁一辆',
+                offer : '--该奖品由正源尚峰尚水提供',
+                address : '领奖地址：云龙山路66号省建大厦B座6楼'
+            },
+            {
+                spoilname : '玛莎拉蒂总裁8辆',
+                offer : '--该奖品由正源尚峰尚水提供',
+                address : '领奖地址：云龙山路66号省建大厦B座6楼号省建大厦B座6楼'
+            },
+            {
+                spoilname : '玛莎拉蒂总裁2辆',
+                offer : '--该奖品由正源尚峰尚水提供',
+                address : '领奖地址：云龙山路66号省建大厦B座6楼云龙山路66号省建大厦B座6楼云龙山路66号省建大厦B座6楼'
+            }
+        ]
+    };
+
+
+
+    var game = new Phaser.Game(750, 1206, Phaser.CANVAS, 'game');
+    game.state.add('Boot', MyGame.Boot);
+    game.state.add('Preloader', MyGame.Preloader);
+    game.state.add('MainMenu', MyGame.MainMenu);
+    game.state.add('Game', MyGame.Game);
+    game.state.add('Exchange', MyGame.Exchange);
+    game.state.add('Myspoil', MyGame.Myspoil);
+    game.state.start('Boot');
+</script>
+<!--<script src="inpMusic.js"></script>-->
+</body>
+</html>

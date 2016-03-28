@@ -1,0 +1,116 @@
+{"frames": [
+
+{
+	"filename": "backexchange.png",
+	"frame": {"x":2,"y":434,"w":448,"h":106},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":448,"h":106},
+	"sourceSize": {"w":448,"h":106}
+},
+{
+	"filename": "backhome.png",
+	"frame": {"x":2,"y":326,"w":448,"h":106},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":448,"h":106},
+	"sourceSize": {"w":448,"h":106}
+},
+{
+	"filename": "close.png",
+	"frame": {"x":235,"y":812,"w":45,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":45,"h":44},
+	"sourceSize": {"w":45,"h":44}
+},
+{
+	"filename": "ex_btn.png",
+	"frame": {"x":2,"y":735,"w":232,"h":75},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":232,"h":75},
+	"sourceSize": {"w":232,"h":75}
+},
+{
+	"filename": "exchange.png",
+	"frame": {"x":2,"y":218,"w":448,"h":106},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":448,"h":106},
+	"sourceSize": {"w":448,"h":106}
+},
+{
+	"filename": "goon.png",
+	"frame": {"x":2,"y":110,"w":448,"h":106},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":448,"h":106},
+	"sourceSize": {"w":448,"h":106}
+},
+{
+	"filename": "lookmypack.png",
+	"frame": {"x":2,"y":2,"w":448,"h":106},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":448,"h":106},
+	"sourceSize": {"w":448,"h":106}
+},
+{
+	"filename": "rul_btn.png",
+	"frame": {"x":282,"y":780,"w":147,"h":76},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":147,"h":76},
+	"sourceSize": {"w":147,"h":76}
+},
+{
+	"filename": "ss.png",
+	"frame": {"x":372,"y":542,"w":37,"h":40},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":37,"h":40},
+	"sourceSize": {"w":37,"h":40}
+},
+{
+	"filename": "sub_btn.png",
+	"frame": {"x":2,"y":812,"w":231,"h":62},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":231,"h":62},
+	"sourceSize": {"w":231,"h":62}
+},
+{
+	"filename": "sun_num_warp.png",
+	"frame": {"x":236,"y":697,"w":211,"h":81},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":211,"h":81},
+	"sourceSize": {"w":211,"h":81}
+},
+{
+	"filename": "touch_btn.png",
+	"frame": {"x":2,"y":542,"w":192,"h":191},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":192,"h":191},
+	"sourceSize": {"w":192,"h":191}
+},
+{
+	"filename": "xiuxiushou.png",
+	"frame": {"x":196,"y":542,"w":174,"h":153},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":174,"h":153},
+	"sourceSize": {"w":174,"h":153}
+}],
+"meta": {
+	"app": "http://www.texturepacker.com",
+	"version": "1.0",
+	"image": "atlas_ico.png",
+	"format": "RGBA8888",
+	"size": {"w":452,"h":876},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:49cb8214c00eaa98dc77c542814d3b82$"
+}
+}
